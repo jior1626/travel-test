@@ -1,0 +1,21 @@
+.form-login {
+    margin-left: 2rem !important;
+}
+
+.recovery-text {
+    font-size: 11px !important;
+}
+
+.content-auth { 
+    display: flex !important;
+    flex-direction: row;
+    padding-top: 7rem !important;
+    padding-left: 15rem !important;
+    padding-right: 15rem !important;
+}
+
+.contain-alert {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    padding-top: 2rem !important;
+}
