@@ -1,12 +1,18 @@
 
 import React from "react";
 
+import Spinner from 'react-bootstrap/Spinner';
 import "./Spinner.css";
 
-const Spinner: React.FC<any> = ({}) => {
+
+const Loading: React.FC<any> = ({}) => {
     return (
-        <></>
+        <div className="loading">
+			<Spinner className='size-loading' animation="border" role="status" variant="primary" size="sm">
+				<span className="visually-hidden">Loading...</span>
+			</Spinner>
+		</div>
     )
 }
 
-export default Spinner;
+export default Loading;
