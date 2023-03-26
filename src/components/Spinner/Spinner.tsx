@@ -1,18 +1,18 @@
 
 import React from "react";
 
+import Spinner from 'react-bootstrap/Spinner';
 import "./Spinner.css";
 
-import { MDBSpinner } from 'mdb-react-ui-kit';
 
-const Spinner: React.FC<any> = ({}) => {
+const Loading: React.FC<any> = ({}) => {
     return (
         <div className="loading">
-			<MDBSpinner color='success' >
-				<span className='visually-hidden'>Loading...</span>
-			</MDBSpinner>
+			<Spinner className='size-loading' animation="border" role="status" variant="primary" size="sm">
+				<span className="visually-hidden">Loading...</span>
+			</Spinner>
 		</div>
     )
 }
 
-export default Spinner;
+export default Loading;
