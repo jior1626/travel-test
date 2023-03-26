@@ -3,9 +3,9 @@ import { Bedroom } from "./bedroom";
 
 export interface Booking {
     id?: number;
-    user: UserDto;
+    user?: UserDto;
     bedroom?: Bedroom;
-    startDate: string;
-    finalDate: string;
-    state: string
+    startDate?: string;
+    finalDate?: string;
+    state?: string
 }
