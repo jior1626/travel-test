@@ -1,15 +1,17 @@
 .form-login {
     margin-left: 2rem !important;
+    width: 400px;
 }
 
 .recovery-text {
-    font-size: 11px !important;
+    font-size: 14px !important;
+    margin-left: 3rem;
 }
 
 .content-auth { 
     display: flex !important;
     flex-direction: row;
-    padding-top: 10rem !important;
+    padding-top: 7rem !important;
     padding-left: 15rem !important;
     padding-right: 15rem !important;
 }
@@ -18,4 +20,15 @@
     padding-left: 3rem !important;
     padding-right: 3rem !important;
     padding-top: 2rem !important;
+}
+
+.image-logo{
+    margin-right: 3rem !important;
+}
+
+
+.image-background{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* IE 9 */
+    -webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
 }
