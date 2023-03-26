@@ -9,7 +9,7 @@
 .content-auth { 
     display: flex !important;
     flex-direction: row;
-    padding-top: 7rem !important;
+    padding-top: 10rem !important;
     padding-left: 15rem !important;
     padding-right: 15rem !important;
 }
