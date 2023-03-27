@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import { Card, Form, Row, Col, Button } from "react-bootstrap";
-import Layout from "../../../components/Layout/Layout";
+import LayoutAdmin from "../../../components/Layout/Admin/Layout";
 import ListHotels from "../../../components/ListHotels/ListHotels";
 
 // Styles
@@ -11,7 +11,7 @@ const HotelManagementView = () =>{
  
     return (
         <>
-            <Layout>
+            <LayoutAdmin>
                 <Row>
                     <Col sm lg={12}>
                         <Card>
@@ -29,7 +29,7 @@ const HotelManagementView = () =>{
                         </Card>
                     </Col>
                 </Row>
-            </Layout>
+            </LayoutAdmin>
         </>
     )
 }

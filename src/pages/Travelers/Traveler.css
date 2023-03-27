@@ -1,0 +1,14 @@
+.div{
+    padding-top: 185px;
+    background: #003580;
+    padding-bottom: 90px;
+}
+
+.content {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    padding-top: 3rem !important;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}

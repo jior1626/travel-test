@@ -1,12 +1,12 @@
-import Layout from "../../../components/Layout/Layout";
+import LayoutAdmin from "../../../components/Layout/Admin/Layout";
 import "./Home.css";
 
 const HomeView = () => {
     return (
         <>
-            <Layout>
+            <LayoutAdmin>
                 HomeView
-            </Layout>
+            </LayoutAdmin>
         </>
     )
 }

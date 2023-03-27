@@ -7,7 +7,7 @@ import NavbarMenu from "./Navbar/Navbar";
 interface LayoutInterface {
     children?: React.ReactNode;
 }
-const Layout: React.FC<LayoutInterface> = ({children}) => {
+const LayoutAdmin: React.FC<LayoutInterface> = ({children}) => {
     return (
        <div className="wrapper">
             <div className="main-panel">
@@ -23,4 +23,4 @@ const Layout: React.FC<LayoutInterface> = ({children}) => {
     )
 }
 
-export default Layout;
+export default LayoutAdmin;

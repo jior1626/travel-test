@@ -7,8 +7,8 @@ import { NavLink, useNavigate  } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 // Redux
-import { useAppDispatch } from "../../../redux/hooks";
-import { setLoading, setLogOut } from "../../../redux/states/auth.slice";
+import { useAppDispatch } from "../../../../redux/hooks";
+import { setLoading, setLogOut } from "../../../../redux/states/auth.slice";
 
 // Styles
 import "./Navbar.css";
@@ -57,8 +57,8 @@ const NavbarMenu: React.FC<any> = ({}) => {
                         <Nav.Item>
                             <NavLink
                                 // data-toggle="dropdown"
-                                to="/home"
                                 className="m-0"
+                                to="/home"
                             >
                                 <i className="nc-icon nc-palette"></i>
                                 <span className="d-lg-none ml-1">Dashboard</span>
@@ -67,11 +67,21 @@ const NavbarMenu: React.FC<any> = ({}) => {
                         <Nav.Item>
                             <NavLink
                                 // data-toggle="dropdown"
-                                to="/users"
                                 className="m-0"
+                                to="/users"
                             >
                                 <i className="nc-icon nc-palette"></i>
                                 <span className="d-lg-none ml-1">Usuarios</span>
+                            </NavLink>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <NavLink
+                                // data-toggle="dropdown"
+                                className="m-0"
+                                to="/hotel"
+                            >
+                                <i className="nc-icon nc-palette"></i>
+                                <span className="d-lg-none ml-1">Hoteles</span>
                             </NavLink>
                         </Nav.Item>
                     </Nav>
@@ -95,7 +105,7 @@ const NavbarMenu: React.FC<any> = ({}) => {
                         <Nav.Item>
                             <NavLink
                                 className="m-0"
-                                to="/hotelAdmon"
+                                to="/hotels"
                             >
                                 <span className="bi bi-building-fill-gear mr-1">Administración De Hoteles</span>
                             </NavLink>

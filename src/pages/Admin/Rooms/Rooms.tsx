@@ -1,12 +1,12 @@
-import Layout from "../../../components/Layout/Layout";
+import LayoutAdmin from "../../../components/Layout/Admin/Layout";
 import ListRooms from "../../../components/ListRooms/ListsRooms";
 
 const RoomsView = () => {
     return (
         <>
-            <Layout>
+            <LayoutAdmin>
                 <ListRooms />
-            </Layout>
+            </LayoutAdmin>
         </>
     )
 }
