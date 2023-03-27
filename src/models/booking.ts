@@ -1,11 +1,11 @@
 import { UserDto } from "./user";
-import { Bedroom } from "./bedroom";
+import { Room } from "./room";
 
 export interface Booking {
     id?: number;
-    user: UserDto;
-    bedroom?: Bedroom;
-    startDate: string;
-    finalDate: string;
-    state: string
+    user?: UserDto;
+    room?: Room;
+    startDate?: string;
+    finalDate?: string;
+    state?: string
 }

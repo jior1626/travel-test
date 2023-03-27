@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserDto } from "../../models";
+import { encrypt } from "../../utilities/helpers";
 import { RootState } from "../store";
 
 export interface UserAuthState {
@@ -26,7 +27,9 @@ const AuthSlice = createSlice({
         setAuthSuccess: (state, { payload }: PayloadAction<UserDto>) => {
             state.user = payload;
             state.isAuth = true;
-            state.isLoading = false
+            state.isLoading = false;
+            const infoUserEncrypted = encrypt(payload);
+            localStorage.setItem("auth", infoUserEncrypted);
         },
         setLogOut: (state) => {
             state.isAuth = false

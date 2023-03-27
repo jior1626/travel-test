@@ -8,7 +8,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 // Redux
 import { useAppDispatch } from "../../../redux/hooks";
-import { setLoading, setLogOut } from "../../../redux/states";
+import { setLoading, setLogOut } from "../../../redux/states/auth.slice";
 
 // Styles
 import "./Navbar.css";
@@ -25,7 +25,7 @@ const NavbarMenu: React.FC<any> = ({}) => {
         dispatch(setLoading(false));
         navigate('/')
     }
-
+    
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -76,12 +76,12 @@ const NavbarMenu: React.FC<any> = ({}) => {
                         </Nav.Item>
                     </Nav>
                     <Nav className="nav" navbar>
-                        <Nav.Item>
+                        <Nav.Item className="mr-2">
                             <NavLink
                                 className="m-0"
                                 to="/home"
                             >
-                                <span className="bi bi-bar-chart-line-fill">Dashboard </span>
+                                <span className="bi bi-bar-chart-line-fill">Dashboard</span>
                             </NavLink>
                         </Nav.Item>
                         <Nav.Item>
@@ -90,6 +90,14 @@ const NavbarMenu: React.FC<any> = ({}) => {
                                 to="/users"
                             >
                                 <span className="bi bi-people-fill mr-1">Usuarios</span>
+                            </NavLink>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <NavLink
+                                className="m-0"
+                                to="/hotelAdmon"
+                            >
+                                <span className="bi bi-building-fill-gear mr-1">Administración De Hoteles</span>
                             </NavLink>
                         </Nav.Item>
                     </Nav>

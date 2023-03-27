@@ -1,16 +1,17 @@
 import { Hotel } from "../models";
 
-const hotels: Hotel[] = [
+export const hotels: Hotel[] = [
      {
         id:1,
         name: "Hotel KV",
         address: "villa del rey",
+        phone: "30087871212",
         city: "Soledad",
         country: "Colombia",
-        bedrooms: [
+        rooms: [
             {
                 id: 1,
-                numberBedroom: "201",
+                numberRoom: "201",
                 type: "Sencilla",
                 description: "Cama sencilla doble, tina",
                 price: 30000,
@@ -18,7 +19,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 2,
-                numberBedroom: "123",
+                numberRoom: "123",
                 type: "Matrimonial",
                 description: "Cama matrimonial doble, tina, 1 comida",
                 price: 60000,
@@ -26,7 +27,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 3,
-                numberBedroom: "67",
+                numberRoom: "67",
                 type: "Sencilla",
                 description: "Cama sencilla doble, tina",
                 price: 30000,
@@ -38,12 +39,13 @@ const hotels: Hotel[] = [
         id:2,
         name: "Hotel dorado barranquilla",
         address: "Carrera 42F #79 38 – ",
+        phone: "43456632",
         city: "Barranquilla",
         country: "Colombia",
-        bedrooms: [
+        rooms: [
             {
                 id: 4,
-                numberBedroom: "12",
+                numberRoom: "12",
                 type: "matrimonial",
                 description: "Cama matrimonial doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 35100,
@@ -51,7 +53,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 5,
-                numberBedroom: "23",
+                numberRoom: "23",
                 type: "Matrimonial",
                 description: "Cama matrimonial doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 348000,
@@ -59,7 +61,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 6,
-                numberBedroom: "17",
+                numberRoom: "17",
                 type: "Sencilla",
                 description: "Cama sencilla doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 300000,
@@ -71,12 +73,13 @@ const hotels: Hotel[] = [
         id:3,
         name: "Ibis barranquilla ",
         address: "Carrera 42F #79 38 – ",
+        phone: "4577532",
         city: "Barranquilla",
         country: "Colombia",
-        bedrooms: [
+        rooms: [
             {
                 id: 7,
-                numberBedroom: "30",
+                numberRoom: "30",
                 type: "matrimonial",
                 description: "Cama matrimonial doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 601900,
@@ -84,7 +87,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 8,
-                numberBedroom: "123",
+                numberRoom: "123",
                 type: "Matrimonial",
                 description: "Cama matrimonial doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 601900,
@@ -92,7 +95,7 @@ const hotels: Hotel[] = [
             },
             {
                 id: 9,
-                numberBedroom: "107",
+                numberRoom: "107",
                 type: "Sencilla",
                 description: "Cama sencilla doble, tina, Piscina al aire libre, Habitaciones sin humo, Servicio de habitaciones, WiFi gratis, Bar",
                 price: 429900,
