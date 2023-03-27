@@ -1,3 +1,4 @@
-export * from "./hotel";
 export * from "./user";
-export * from "./bedroom";
+export * from "./hotel";
+export * from "./room";
+export * from "./booking";

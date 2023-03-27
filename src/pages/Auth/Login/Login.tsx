@@ -4,13 +4,12 @@ import "./Login.css"
 // Redux
 import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
-import { authSelector, setLoading } from "../../../redux/states";
+import { authSelector, setAuthFailed, setLoading, setAuthSuccess } from "../../../redux/states/auth.slice";
 
 // Libraries
 import { useNavigate } from "react-router-dom";
 
 // Components Library
-import { MDBBtn, MDBInput, MDBRow, MDBCol, MDBCheckbox } from 'mdb-react-ui-kit';
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/esm/Button";
 
@@ -18,7 +17,8 @@ import Button from "react-bootstrap/esm/Button";
 import Loading from "../../../components/Spinner/Spinner";
 import Logo from "./../../../assets/img/login-logo-travel.jpg";
 
-
+// Data Fake
+import { users } from "../../../data/user";
 
 const Login = () => {
 
@@ -41,18 +41,17 @@ const Login = () => {
     const authLogin = async (e: any) => {
         e.preventDefault();
         dispatch(setLoading(true));
-
         if(email != "" && password != "") {
-            // const user = await AuthService.loginUser(email, password);
-            // if(user.length > 0) {
-            //     dispatch(setAuthSuccess(user[0]));
-            //     navigate(`/home`)
-            // } else {
-            //     dispatch(setAuthFailed("Usuario no registrado. Por favor registrese!!!"));
-            //     setTypeAlert("danger");
-            //     setMessageAlert("Usuario no registrado. Por favor registrese!!!")
-            //     setShowAlert(true);
-            // }
+            const user = users.find(item => item.email == email && item.password == password);
+            if(user) {
+                dispatch(setAuthSuccess(user));
+                navigate(`/home`)
+            } else {
+                dispatch(setAuthFailed("Usuario no registrado. Por favor registrese!!!"));
+                setTypeAlert("danger");
+                setMessageAlert("Usuario no registrado. Por favor registrese!!!")
+                setShowAlert(true);
+            }
         } else {
             setTypeAlert("danger");
             setMessageAlert("Correo o contraseña vacios!!!")

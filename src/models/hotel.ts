@@ -1,10 +1,11 @@
-import { Bedroom } from "./bedroom";
+import { Room } from "./room";
 
 export interface Hotel {
     id?: number;
     name?: string;
     address?: string;
+    phone?: string;
     city?: string;
     country?: string;
-    bedrooms ?: Bedroom[]
+    rooms?: Room[]
 }
