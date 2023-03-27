@@ -55,7 +55,7 @@ const ListHotels = () => {
                                             </Tooltip>
                                         }
                                     >
-                                        <a href="#" onClick={() => seeRooms(item.id)} title={"Ver Habitaciones"}>
+                                        <a href="" onClick={() => seeRooms(item.id)} title={"Ver Habitaciones"}>
                                             {item.rooms?.length}
                                         </a>
                                         {/* <Button variant="secondary">{item.bedrooms?.length}</Button> */}

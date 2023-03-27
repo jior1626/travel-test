@@ -7,7 +7,7 @@ import ListHotels from "../../../components/ListHotels/ListHotels";
 // Styles
 import "./HotelManagement.css";
 
-const HotelManagement = () =>{
+const HotelManagementView = () =>{
  
     return (
         <>
@@ -33,4 +33,4 @@ const HotelManagement = () =>{
         </>
     )
 }
-export default HotelManagement;
+export default HotelManagementView;

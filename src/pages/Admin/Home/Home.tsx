@@ -1,14 +1,14 @@
 import Layout from "../../../components/Layout/Layout";
 import "./Home.css";
 
-const Home: React.FC<any> = ({}) => {
+const HomeView = () => {
     return (
         <>
             <Layout>
-                Home
+                HomeView
             </Layout>
         </>
     )
 }
 
-export default Home;
+export default HomeView;
