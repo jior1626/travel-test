@@ -14,7 +14,7 @@ const router = createBrowserRouter(
 		<Route>
 			<Route path="/" element={<Auth />} />
 			<Route path="/home" element={<Middleware Element={<HomeView />} path="/home" />} />
-			<Route path="/hotel" element={<Middleware Element={<HotelView />} path="/hotel" />} />
+			<Route path="/hotels" element={<Middleware Element={<HotelView />} path="/hotel" />} />
 			<Route path="/hotel/:id/rooms" element={<Middleware Element={<RoomsView />} path="/hotel/:id/rooms" />} />
 		</Route>
 	)

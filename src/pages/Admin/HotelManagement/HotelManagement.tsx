@@ -16,15 +16,15 @@ const HotelManagementView = () =>{
                     <Col sm lg={12}>
                         <Card>
                             <Card.Header as="div" className="align-header-content">
-                                <h5><span className="bi bi-building-fill-gear mr-1">Listado De Hoteles</span></h5>
+                                <h5><span className="bi bi-building-fill-gear mr-1"> Listado De Hoteles</span></h5>
                                 <div className="pull-right">
                                     <Button variant="success">
-                                        <span className="bi bi-plus-circle-fill"> Create Hotel</span>
+                                        <span className="bi bi-plus-circle-fill"> Crear Hotel</span>
                                     </Button>
                                 </div>
                             </Card.Header>
                             <Card.Body className="p-5">
-                                <ListHotels></ListHotels>
+                                <ListHotels />
                             </Card.Body>
                         </Card>
                     </Col>

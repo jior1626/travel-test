@@ -3,11 +3,12 @@ import { Hotel } from "../models";
 export const hotels: Hotel[] = [
      {
         id:1,
-        name: "Hotel KV",
-        address: "villa del rey",
+        name: "Hotel Winsor",
+        address: "Av riomar 45 No 80 - 102",
         phone: "30087871212",
-        city: "Soledad",
+        city: "Barranquilla",
         country: "Colombia",
+        image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/138012329.jpg?k=132b65881a38874a402f206cb7c509f881e4968ded2d832e895bee6e051bff09&o=&hp=1",
         rooms: [
             {
                 id: 1,
@@ -42,6 +43,7 @@ export const hotels: Hotel[] = [
         phone: "43456632",
         city: "Barranquilla",
         country: "Colombia",
+        image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/145236362.jpg?k=8651a0c9218ea4df3570e54c21c96d7ec7a37f9db782e64d97e8231bb78f52c0&o=&hp=1",
         rooms: [
             {
                 id: 4,
@@ -76,6 +78,7 @@ export const hotels: Hotel[] = [
         phone: "4577532",
         city: "Barranquilla",
         country: "Colombia",
+        image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/332020015.jpg?k=c0c5aeb213bc68fee345780ffb44fa358995f3704381dad591caa06e3896a26b&o=&hp=1",
         rooms: [
             {
                 id: 7,

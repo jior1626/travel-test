@@ -1,37 +1,16 @@
 import { useEffect, useState } from "react";
-import { Button, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { Button, Card, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router";
 import { hotels } from "../../data/hotel";
 import { Hotel, Room } from "../../models";
 
 interface ListRoomsInterface {
-    props: Room[]
+    data: Room[]
 }
 
-const ListRooms = () => {
+const ListRooms: React.FC<ListRoomsInterface> = ({data}) => {
 
-    const params = useParams();
-
-    const navigate = useNavigate();
-
-    const [hotel, setHotel] = useState<Hotel>({});
-
-    const [rooms, setRooms] = useState<Room[]>([]);
-
-    const getRooms = () => {
-        if(!params.id) {
-            navigate("/hotel");
-        } else {
-            const hotelFind = hotels.find(item => item.id == params.id);
-            setHotel(hotelFind ? hotelFind : {});
-            setRooms(hotelFind?.rooms ? hotelFind?.rooms : []);
-        }
-    }
-
-    useEffect(() => {
-        getRooms();
-    }, [])
-
+   
     const editRoom = (item:  any) => {
 
     }
@@ -45,8 +24,7 @@ const ListRooms = () => {
             <Table striped hover size="sm">
                 <thead>
                     <tr className="text-center">
-                        <th>#</th>
-                        <th>Number Room</th>
+                        <th>Number</th>
                         <th>Description</th>
                         <th>Type</th>
                         <th>Price</th>
@@ -55,14 +33,13 @@ const ListRooms = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {rooms.map((item, index) => {
+                    {data.map((item, index) => {
                         return (
                             <tr key={index}>
-                                <td className="text-center">{item.id}</td>
-                                <td>{item.numberRoom}</td>
-                                <td className="text-right">{item.description}</td>
-                                <td className="text-center">{item.type}</td>
-                                <td className="text-center">{item.price}</td>
+                                <td className="text-center">{item.numberRoom}</td>
+                                <td>{item.description}</td>
+                                <td>{item.type}</td>
+                                <td className="text-right">{item.price}</td>
                                 <td className="text-center">{item.tax}</td>
                                 <td className="d-flex justify-content-around">
                                     <Button size="sm" variant="primary" onClick={() => editRoom(item)}>

@@ -54,28 +54,6 @@ const NavbarMenu: React.FC<any> = ({}) => {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="nav" navbar>
-                        <Nav.Item>
-                            <NavLink
-                                // data-toggle="dropdown"
-                                to="/home"
-                                className="m-0"
-                            >
-                                <i className="nc-icon nc-palette"></i>
-                                <span className="d-lg-none ml-1">Dashboard</span>
-                            </NavLink>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <NavLink
-                                // data-toggle="dropdown"
-                                to="/users"
-                                className="m-0"
-                            >
-                                <i className="nc-icon nc-palette"></i>
-                                <span className="d-lg-none ml-1">Usuarios</span>
-                            </NavLink>
-                        </Nav.Item>
-                    </Nav>
-                    <Nav className="nav" navbar>
                         <Nav.Item className="mr-2">
                             <NavLink
                                 className="m-0"
@@ -95,7 +73,7 @@ const NavbarMenu: React.FC<any> = ({}) => {
                         <Nav.Item>
                             <NavLink
                                 className="m-0"
-                                to="/hotelAdmon"
+                                to="/hotels"
                             >
                                 <span className="bi bi-building-fill-gear mr-1">Administración De Hoteles</span>
                             </NavLink>

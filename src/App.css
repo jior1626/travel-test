@@ -2,3 +2,7 @@
   width: 100%;
   height: 100vh;
 }
+
+.card {
+  box-shadow: 0px 7px 15px 2px gainsboro !important;
+}

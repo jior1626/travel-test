@@ -7,5 +7,6 @@ export interface Hotel {
     phone?: string;
     city?: string;
     country?: string;
+    image?: string;
     rooms?: Room[]
 }

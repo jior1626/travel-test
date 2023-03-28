@@ -24,7 +24,7 @@ const ListHotels = () => {
 
     return (
         <>
-            <Table striped hover size="sm">
+            <Table striped hover responsive size="sm">
                 <thead>
                     <tr className="text-center">
                         <th>#</th>
@@ -55,7 +55,7 @@ const ListHotels = () => {
                                             </Tooltip>
                                         }
                                     >
-                                        <a href="" onClick={() => seeRooms(item.id)} title={"Ver Habitaciones"}>
+                                        <a href="#" onClick={() => seeRooms(item.id)} title={"Ver Habitaciones"}>
                                             {item.rooms?.length}
                                         </a>
                                         {/* <Button variant="secondary">{item.bedrooms?.length}</Button> */}
