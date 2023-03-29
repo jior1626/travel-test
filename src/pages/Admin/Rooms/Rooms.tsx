@@ -80,7 +80,7 @@ const RoomsView = () => {
                                     </Col>
                                     <Col lg={8}>
                                         {   showList ? 
-                                                <ListRooms data={hotel.rooms} /> 
+                                                <ListRooms data={hotel.rooms ? hotel.rooms: []} /> 
                                             :   <AddRoom data={hotel}/>
                                         }
                                     </Col>
