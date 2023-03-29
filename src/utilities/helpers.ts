@@ -19,3 +19,17 @@ export const decrypt = (data: any) => {
 export const generateToken = (data: any) => {
 
 }
+
+
+export const getItemLocalStorage = (item: string) => {
+    let data = localStorage.getItem(item);
+    if (data) {
+        return JSON.parse(data);
+    } else {
+        return null;
+    }
+}
+
+export const setItemLocalStorage = (item: string, data: any) => {
+    localStorage.setItem(item, JSON.stringify(data));
+}

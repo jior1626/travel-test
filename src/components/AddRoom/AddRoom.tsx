@@ -1,110 +1,173 @@
-import { Button, Col, Form, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Card, Col, Form, Row, Tab, Tabs, ToggleButtonGroup  } from "react-bootstrap";
+import { Hotel } from "../../models";
+import DropzoneComponent from "../Dropzone/Dropzone";
+
+// import ToggleButton from 'react-bootstrap/ToggleButton'
+
+// Styles
+import "./AddRoom.css";
+
+interface AddRoomInterface {
+    data: Hotel
+}
+
+const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
+
+    const [numberRoom, setNumberRoom] = useState("");
+
+    const [typeRoom, setTypeRoom] = useState("");
+
+    const [description, setDescription] = useState("");
+
+    const [beds, setBeds] = useState("");
+
+    const [bathrooms, setBathrooms] = useState("");
+
+    const [sizeRoom, setSizeRoom] = useState("");
+
+    const [price, setPrice] = useState("");
+
+    const [tax, setTax] = useState("");
+
+    const [wifi, setWifi] = useState(false);
+
+    const [bathtub, setBathtub] = useState(false);
+
+    const [addFiles, setAddFiles] = useState<any[]>([]);
 
 
-const AddRoom = () => {
+    const SaveRoom = (e: any) => {
+        e.preventDefault();
+
+
+    }
+
     return (
-        <Form>
-            <Row>
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label># de habitación<strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="text" required placeholder="Ingrese el numero de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Tipo de habitación <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Select>
-                            <option value={""}>Select option...</option>
-                            <option value={"Simple"}>Sencilla</option>
-                            <option value={"Simple"}>Sencilla Doble</option>
-                            <option value={"Simple"}>Especial</option>
-                            <option value={"Simple"}>Especial Doble</option>
-                            <option value={"Simple"}>Deluxe Doble</option>
-                            <option value={"Simple"}>Deluxe Triple</option>
-                        </Form.Select>
-                    </Form.Group>
-                    
-                </Col>
-            </Row>
-            <Row>
-                <Col sm lg={12}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Descripción <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="text" required placeholder="Ingrese la descripción de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
-            </Row>
+        <Form onSubmit={SaveRoom}>
 
-            <Row>
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Tamaño de la Habitacion <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="number" required placeholder="Ingrese el precio de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
+            <Tabs
+                defaultActiveKey="basic"
+                id="fill-tab-example"
+                className="item-menu-hotels mt-2 mb-4"
+                justify
+            >
+                <Tab eventKey="basic" title="Información Básica">
+                    <Row>
+                        <Col sm lg={6}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label># de habitación<strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="text" required placeholder="Ingrese el numero de la habitación" onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
+                        <Col sm lg={6}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Tipo de habitación <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Select autoComplete="off" >
+                                    <option value={""}>Select option...</option>
+                                    <option value={"Simple"}>Sencilla</option>
+                                    <option value={"SimpleX2"}>Sencilla Doble</option>
+                                    <option value={"Special"}>Especial</option>
+                                    <option value={"SpecialX2"}>Especial Doble</option>
+                                    <option value={"DeluxeX2"}>Deluxe Doble</option>
+                                    <option value={"DeluxeX3"}>Deluxe Triple</option>
+                                </Form.Select>
+                            </Form.Group>
+                            
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm lg={12}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Descripción <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="text" required placeholder="Ingrese la descripción de la habitación" onChange={e => {}} autoComplete="off"  />
+                            </Form.Group>
+                        </Col>
+                    </Row>
 
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Numero de Camas <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="number" required placeholder="Ingrese el impuesto de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
+                    <Row>
+                        <Col sm lg={3}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Numero de Baños <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="number" min={0} required placeholder="Cant. de baños" onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
 
-            </Row>
+                        <Col sm lg={3}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Numero de Camas <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="number" min={0} required placeholder="Cant. de camas" onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
 
-            <Row>
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Precio <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="number" required placeholder="Ingrese el precio de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
+                        <Col sm lg={6}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Tamaño de la Habitacion <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="text" required placeholder="Ingrese el tamaño de la habitación" onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
 
-                <Col sm lg={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Impuestos <strong className="text-danger">*</strong></Form.Label>
-                        <Form.Control type="number" required placeholder="Ingrese el impuesto de la habitación" onChange={e => {}} />
-                    </Form.Group>
-                </Col>
+                    </Row>
 
-            </Row>
+                    <Row>
+                        <Col sm lg={3}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Precio <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
 
-            <Row className="mt-3">
-                <Col sm lg={3}>
-                    <Form.Group className="mb-3">
-                        <Form.Check
-                            type="checkbox"
-                            id="wifi"
-                            label="Wifi"
-                        />
-                    </Form.Group>
-                </Col>
+                        <Col sm lg={3}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Impuestos <strong className="text-danger">*</strong></Form.Label>
+                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => {}} autoComplete="off" />
+                            </Form.Group>
+                        </Col>
 
-                <Col sm lg={3}>
-                    <Form.Group className="mb-3">
-                        <Form.Check
-                            type="checkbox"
-                            id="bañera"
-                            label="Bañera"
-                        />
-                    </Form.Group>
-                </Col>
+                        <Col sm lg={3}>
+                            <Form.Group className="mt-4">
+                                <Form.Check 
+                                    className="form-size-switch"
+                                    type="switch"
+                                    id="wifi-switch"
+                                    label="Wifi"
+                                    onChange={() => setWifi(!wifi)}
+                                />
+                            </Form.Group>
+                        </Col>
 
-            </Row>
+                        <Col sm lg={3}>
+                            <Form.Group className="mt-4">
+                                <Form.Check 
+                                    className="form-size-switch"
+                                    type="switch"
+                                    id="bathtub-switch"
+                                    label="Bañera"
+                                    onChange={() => setBathtub(!bathtub)}
+                                />
+                            </Form.Group>
+                        </Col>
+
+                    </Row>
+
+                    <Row className="mt-4">
+                        <Col sm lg={12} className="d-grid gap-2">
+                            <Button size="lg" variant="primary" type="submit">
+                                Registrar
+                            </Button>
+                        </Col>
+                    </Row>
+                </Tab>
+                <Tab eventKey="images" title="Imágenes">
+                    <Row>
+                        <Col lg={12}>
+                            <DropzoneComponent setAddFiles={() => setAddFiles}/>
+                        </Col>
+                    </Row>
+                   
+                </Tab>
+            </Tabs>
            
-           
-            
-           
-            
-
-            <div className="row">
-                <div className="col-md-12 d-grid gap-2">
-                    <Button size="lg" variant="primary" type="submit">
-                        Registrar
-                    </Button>
-                </div>
-            </div>
         </Form>
     )
 }

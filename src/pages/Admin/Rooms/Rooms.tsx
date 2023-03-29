@@ -8,6 +8,9 @@ import ListRooms from "../../../components/ListRooms/ListsRooms";
 import { hotels } from "../../../data/hotel";
 import { Hotel, Room } from "../../../models";
 
+// Styles
+import "./Rooms.css";
+
 const RoomsView = () => {
 
     const params = useParams();
@@ -20,7 +23,7 @@ const RoomsView = () => {
 
     const [showList, setShowList] = useState(true);
 
-    const getRooms = () => {
+    const getInfoHotelAndRooms = () => {
         if(!params.id) {
             navigate("/hotel");
         } else {
@@ -31,24 +34,22 @@ const RoomsView = () => {
     }
 
     useEffect(() => {
-        getRooms();
+        getInfoHotelAndRooms();
     }, [])
 
     return (
         <>
             <Layout>
-                <Row className="mb-5">
+                 <Row className="mb-5">
                     <Col sm lg={12}>
-                        <h2>
+                        <h3>
                             <span className="bi bi-building-fill-up">  Información Hotel / Habitaciones</span>
-                        </h2>
+                        </h3>
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm lg={4}>
-                        <InfoHotel data={hotel} />
-                    </Col>
-                    <Col sm lg={8}>
+                    
+                    <Col sm lg={12}>
                         <Card>
                             <Card.Header as="div" className="align-header-content">
                                 <h5>
@@ -73,9 +74,18 @@ const RoomsView = () => {
                                 </div>
                             </Card.Header>
                             <Card.Body className="p-3">
-                                {showList ? 
-                                 <ListRooms data={rooms} /> : <AddRoom />
-                                }
+                                <Row>
+                                    <Col lg={4} className="content-info-hotel">
+                                        <InfoHotel data={hotel} />
+                                    </Col>
+                                    <Col lg={8}>
+                                        {   showList ? 
+                                                <ListRooms data={hotel.rooms} /> 
+                                            :   <AddRoom data={hotel}/>
+                                        }
+                                    </Col>
+                                </Row>
+                               
                             </Card.Body>
                         </Card>
                     </Col>

@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import  AuthReducer  from './states/auth.slice';
+import  LoadingReducer  from './states/loading.slice';
 
 export const store = configureStore({
     reducer: {
-		auth: AuthReducer
+		auth: AuthReducer,
+		loading: LoadingReducer
     }
 })
 
