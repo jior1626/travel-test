@@ -28,3 +28,17 @@ export const getItemLocalStorage = (item: string) => {
 export const setItemLocalStorage = (item: string, data: any) => {
     localStorage.setItem(item, JSON.stringify(data));
 }
+
+export const blobToBase64 = (blob: any) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    return new Promise(resolve => {
+        reader.onloadend = () => {
+            resolve(reader.result);
+        };
+    });
+};
+
+export const getImageBase64 = async (blob: any) => {
+    return blobToBase64(blob).then(result => result);
+}

@@ -1,5 +1,7 @@
 import { Room } from "./room";
 
+import { Images } from "./images";
+
 export interface Hotel {
     id?: number;
     name?: string;
@@ -7,6 +9,6 @@ export interface Hotel {
     phone?: string;
     city?: string;
     country?: string;
-    image?: string;
+    image?: Images[];
     rooms?: Room[]
 }

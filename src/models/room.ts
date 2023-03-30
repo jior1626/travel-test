@@ -1,8 +1,4 @@
-interface ImagesRooms {
-    preview: string;
-    name: string;
-}
-
+import { Images } from "./images";
 
 export interface Room {
     id?: number;
@@ -16,5 +12,5 @@ export interface Room {
     bathrooms?: number;
     wifi?: boolean;
     bathtub?: boolean;
-    images?: ImagesRooms[];
+    images?: Images[];
 }

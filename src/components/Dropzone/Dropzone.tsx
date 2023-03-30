@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useDropzone } from 'react-dropzone';
+import { blobToBase64, getImageBase64 } from '../../utilities/helpers';
 
 const baseStyle = {
     display: 'flex',
@@ -36,19 +37,20 @@ const DropzoneComponent: React.FC<DropzoneInterface> = ({setAddFiles}) => {
 
     const [files, setFiles] = useState<any[]>([]);
 
-    const onDrop = useCallback((acceptedFiles: any) => {
+    const onDrop = useCallback(async (acceptedFiles: any) => {
 
-            const newFiles = acceptedFiles.map((file: any) => Object.assign(file, {
+            let base64 = await getImageBase64(acceptedFiles[0]);
+            
+            let newFiles = await acceptedFiles.map((file: any) => Object.assign(file, {
                 preview: URL.createObjectURL(file),
+                base64: base64
             }));
             
             setFiles((item) => [...item, ...newFiles]);
 
-            setAddFiles((item: any) => [...item, {
-                preview: newFiles.preview,
-                name: newFiles.name
-            }]);
-    }, []);
+            setAddFiles((item: any) => [...item, ...newFiles]);
+
+        }, []);
 
     const {
         getRootProps,
