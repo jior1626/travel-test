@@ -14,7 +14,7 @@ export const users: UserDto[] = [
         nameEmergency:"Bertha Rodriguez Lora",
         username: "jordarturo1998@gmail.com",
         role: "Agent",
-        password: "jordan1998",
+        password: "jordarturo1998",
         address: "Carrera 2e # 25 - 48",
         city: "Barranquilla",
         country: "Colombia"

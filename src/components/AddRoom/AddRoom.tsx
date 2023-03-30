@@ -39,8 +39,7 @@ const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
 
     const SaveRoom = (e: any) => {
         e.preventDefault();
-
-
+        
     }
 
     return (
@@ -57,13 +56,13 @@ const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
                         <Col sm lg={6}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label># de habitación<strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="text" required placeholder="Ingrese el numero de la habitación" onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="text" required placeholder="Ingrese el numero de la habitación" onChange={e => setNumberRoom(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
                         <Col sm lg={6}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Tipo de habitación <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Select autoComplete="off" >
+                                <Form.Select autoComplete="off" onChange={e => setTypeRoom(e.target.value)}>
                                     <option value={""}>Select option...</option>
                                     <option value={"Simple"}>Sencilla</option>
                                     <option value={"SimpleX2"}>Sencilla Doble</option>
@@ -80,7 +79,7 @@ const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
                         <Col sm lg={12}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Descripción <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="text" required placeholder="Ingrese la descripción de la habitación" onChange={e => {}} autoComplete="off"  />
+                                <Form.Control type="text" required placeholder="Ingrese la descripción de la habitación" onChange={e => setDescription(e.target.value)} autoComplete="off"  />
                             </Form.Group>
                         </Col>
                     </Row>
@@ -89,21 +88,21 @@ const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
                         <Col sm lg={3}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Numero de Baños <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="number" min={0} required placeholder="Cant. de baños" onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="number" min={0} required placeholder="Cant. de baños" onChange={e => setDescription(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
 
                         <Col sm lg={3}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Numero de Camas <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="number" min={0} required placeholder="Cant. de camas" onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="number" min={0} required placeholder="Cant. de camas" onChange={e => setDescription(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
 
                         <Col sm lg={6}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Tamaño de la Habitacion <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="text" required placeholder="Ingrese el tamaño de la habitación" onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="text" required placeholder="Ingrese el tamaño de la habitación" onChange={e => setDescription(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
 
@@ -113,14 +112,14 @@ const AddRoom: React.FC<AddRoomInterface> = ({data}) => {
                         <Col sm lg={3}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Precio <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => setDescription(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
 
                         <Col sm lg={3}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Impuestos <strong className="text-danger">*</strong></Form.Label>
-                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => {}} autoComplete="off" />
+                                <Form.Control type="number" min={0} required placeholder="Digite un valor..." onChange={e => setDescription(e.target.value)} autoComplete="off" />
                             </Form.Group>
                         </Col>
 

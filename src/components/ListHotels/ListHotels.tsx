@@ -1,21 +1,54 @@
 import { Table, Row, Col, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { hotels } from "../../data/hotel";
-import { Room } from "../../models";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import "./ListHotels.css";
 
 // import hotels from "./../../data/hotel";
+
+import { getHotels, deleteHotelById, hotelsSelector } from "./../../redux/states/hotel.slice";
+import { useEffect } from "react";
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ListHotels = () => {
 
     const navigate = useNavigate();
 
+    const { hotels } = useAppSelector(hotelsSelector);
+
+    const dispatch = useAppDispatch();
+
+    const MySwal = withReactContent(Swal)
+
+    const listHotels = () => {
+        dispatch(getHotels(true))
+    }
+
+    useEffect(() => {
+        listHotels();
+    }, [])
+
     const editHotel = (item:  any) => {
 
     }
 
-    const deleteHotel = (item: any) => {
-
+    const deleteHotel = async (itemId: number) => {
+        
+        MySwal.fire({
+            title: 'Estas seguro de borrar este hotel?',
+            // showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Borrar Registro',
+            // denyButtonText: `Don't save`,
+            allowOutsideClick: false,
+        }).then(async (result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                await dispatch(deleteHotelById(itemId))
+                MySwal.fire('Borrado Correctamente!', '', 'success')
+            }
+        })
     }
 
     const seeRooms = (hotelId: any) => {

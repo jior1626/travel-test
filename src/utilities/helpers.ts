@@ -16,11 +16,6 @@ export const decrypt = (data: any) => {
     return decrypted;
 }
 
-export const generateToken = (data: any) => {
-
-}
-
-
 export const getItemLocalStorage = (item: string) => {
     let data = localStorage.getItem(item);
     if (data) {
