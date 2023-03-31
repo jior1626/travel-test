@@ -19,7 +19,7 @@ const ListHotels = () => {
 
     const dispatch = useAppDispatch();
 
-    const MySwal = withReactContent(Swal)
+    const MySwal = withReactContent(Swal);
 
     const listHotels = () => {
         dispatch(getHotels(true))
@@ -34,13 +34,10 @@ const ListHotels = () => {
     }
 
     const deleteHotel = async (itemId: number) => {
-        
         MySwal.fire({
             title: 'Estas seguro de borrar este hotel?',
-            // showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Borrar Registro',
-            // denyButtonText: `Don't save`,
             allowOutsideClick: false,
         }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
@@ -64,7 +61,7 @@ const ListHotels = () => {
                         <th>Name Hotel</th>
                         <th>Phone</th>
                         <th>Country/City</th>
-                        <th>Address</th>
+                        <th>Address</th>    
                         <th>Habitaciones</th>
                         <th></th>
                     </tr>
@@ -91,9 +88,7 @@ const ListHotels = () => {
                                         <a href="#" onClick={() => seeRooms(item.id)} title={"Ver Habitaciones"}>
                                             {item.rooms?.length}
                                         </a>
-                                        {/* <Button variant="secondary">{item.bedrooms?.length}</Button> */}
                                     </OverlayTrigger>
-                                    
                                 </td>
                                 <td className="d-flex justify-content-around">
                                     <Button size="sm" variant="primary" onClick={() => editHotel(item)}>

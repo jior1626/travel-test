@@ -1,10 +1,10 @@
 import CryptoJS from "crypto-js";
+import { hotels } from "../data/hotel";
+import { users } from "../data/user";
 import { constants } from "./constants";
 
 export const encrypt = (data: any) => {
-
     var encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), constants.secretPass);
-
     return encrypted.toString();
 }
 
@@ -41,4 +41,11 @@ export const blobToBase64 = (blob: any) => {
 
 export const getImageBase64 = async (blob: any) => {
     return blobToBase64(blob).then(result => result);
+}
+
+export const generateIdToData = (model: string) => {
+    const min = 1;
+    const max = 100000;
+    const rand = Math.floor(Math.random() * (max-min)) + min;
+    return rand;
 }

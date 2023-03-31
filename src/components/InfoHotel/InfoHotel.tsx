@@ -1,4 +1,4 @@
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Carousel, Col, Image, Row } from "react-bootstrap";
 import { Hotel } from "../../models";
 
 interface HotelInterface {
@@ -9,11 +9,21 @@ const InfoHotel: React.FC<HotelInterface> = ({data}) => {
     return (
         <>
             <Card border="primary" style={{ width: '18rem' }}>
-                {/* <Card.Header as="div" className="align-header-content">
-                    <h5><span className="bi bi-building-fill-up mr-1">Información Del Hotel</span></h5>
-                </Card.Header> */}
-                <Card.Img variant="top" src={data.image} />
                 <Card.Body className="p-3">
+
+                    <Carousel className="mb-4">
+                        { data.images?.map(image => {
+                            return (
+                                <Carousel.Item interval={1000}>
+                                    <img
+                                        className="d-block w-100"
+                                        src={image.preview}
+                                        alt="First slide"
+                                    />
+                                </Carousel.Item>
+                            )
+                        })}
+                    </Carousel>
 
                     <Card.Title className="mb-3" as="h4"><strong>{data.name}</strong></Card.Title>
 

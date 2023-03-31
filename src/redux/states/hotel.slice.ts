@@ -5,12 +5,14 @@ import { getItemLocalStorage, setItemLocalStorage } from "../../utilities/helper
 import { RootState } from "../store";
 
 export interface HotelsState {
-    hotels: Hotel[]
-    error: string
+    hotels: Hotel[];
+    error: string;
+    hotelCreated: boolean;
 }
 
 export const initialState: HotelsState = {
     hotels: [],
+    hotelCreated: false,
     error: "",
 }
 
@@ -27,15 +29,28 @@ const HotelSlice = createSlice({
                 state.hotels = hotels;
             }
         },
+        addHotel: (state, {payload}: PayloadAction<Hotel>) => {
+            state.hotels = [...state.hotels, {...payload}];
+            state.hotelCreated = true;
+            setItemLocalStorage("hotels", state.hotels);
+        },
         deleteHotelById: (state, { payload }: PayloadAction<number>) => {
             state.hotels = state.hotels.filter(item => item.id != payload);
             setItemLocalStorage("hotels", state.hotels);
+        },
+        error: (state, { payload }: PayloadAction<string>) => {
+            state.error = payload;
         }
     }
 })
 
-export const { getHotels, deleteHotelById } = HotelSlice.actions
+export const { getHotels, addHotel, deleteHotelById } = HotelSlice.actions
 
 export const hotelsSelector = (state: RootState) => state.hotels
 
 export default HotelSlice.reducer;
+
+
+// 6013810550
+
+// 018000112911
